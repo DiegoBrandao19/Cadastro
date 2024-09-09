@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Concluído</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h1 class="text-center mb-4">Cadastro Concluído com Sucesso!</h1>
+      <p>Obrigado por se cadastrar. Seus dados foram enviados com sucesso.</p>
+
+      <p><strong>Nome:</strong> <span id="nome"></span></p>
+      <p><strong>E-mail:</strong> <span id="email"></span></p>
+      <p><strong>CPF:</strong> <span id="cpf"></span></p>
+      <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+
+      <button class="btn btn-success btn-block mt-3" onclick="window.location.href='FinalTela.html'">Continuar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js (Optional for interactivity) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById("nome").innerText = urlParams.get("nome");
+    document.getElementById("email").innerText = urlParams.get("email");
+    document.getElementById("cpf").innerText = urlParams.get("cpf");
+    document.getElementById("telefone").innerText = urlParams.get("telefone");
+  }
+</script>
+</body>
+</html>
